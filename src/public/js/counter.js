@@ -1,7 +1,7 @@
 'use strict'
 /* global alert */
 window.onload = function () {
-  let button = document.getElementById('go_button')
+  let button = document.getElementById('gobutton')
   let displayDiv = document.getElementById('numberdisplay')
   let chosenNumberEl = document.getElementById('number')
 
