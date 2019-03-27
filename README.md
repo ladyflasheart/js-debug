@@ -24,9 +24,3 @@ Javascript file: `counter.js`
 Page with a slideshow. You choose one of three galleries in a drop down and then press the Go button. This fetches the specified gallery and starts a slideshow underneath. To pause the slideshow hover your mouse over a picture. The page uses Bootstrap, JQuery in the custom javascript and the JSSOR slideshow code.
 Javascript file: `slideshow.js`
 
-## Github Tags
- `git checkout allworking` - Working code 
- 
- `git checkout counterbroken` - Counter page broken to practice fixing
- 
- `git checkout slideshowbroken` - Slideshow page broken to practice fixing

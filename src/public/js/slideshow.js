@@ -1,5 +1,5 @@
 
-/* global alert $ $JssorSlider$ */
+/* global alert, $, $JssorSlider$ */
 
 $(document).ready(function () {
   // create slider instance with options set to disabled to start with
