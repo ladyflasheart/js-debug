@@ -1,0 +1,51 @@
+/*
+Styles specific to javascript debug that work alongside the underlying bootstrap styling and components
+*/
+/*pastel shades for the body background colours*/
+.pastel-blue {
+    background-color: #caebf2;
+}
+
+.pastel-green {
+    background-color: #d6ffd6;
+}
+
+.pastel-pink {
+    background-color: #ffe6ff;
+}
+
+.pastel-yellow {
+    background-color: #ffff80;
+}
+
+/*central white page */
+.centrepage {
+    background-color: #fff;
+    font-size : large;
+    border-radius: 10px;
+}
+
+/* overriding a few bootstrap navigation defaults */
+.navbar nav {
+    background-color: #caebf2;
+}
+
+.nav-item a {
+    border-radius: 10px;
+}
+/* round circle div for showing the number count */
+#numberdisplay {
+    border-radius : 50%;
+    font-size : xx-large;
+    height: 5em;
+    width: 5em;
+    line-height: 5em;
+}
+
+.activeyellow {
+    background-color : #f9cf00;
+}
+
+.activegreen {
+    background-color : #98fb98;
+}

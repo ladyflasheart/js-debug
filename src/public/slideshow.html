@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Javascript Debug Examples</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="js/bootstrap/bootstrap.min.css" >
+        <link rel="stylesheet" href="css/jsdb-main.css">
+    </head>
+    <body class="pastel-yellow">
+        <div id="container" class="container"><!-- needed for bootstrap styling -->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item mx-5">
+                        <a class="nav-link text-primary" href="index.html">Home </a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link text-primary" href="console-methods.html">Console</a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link text-primary" href="counter.html">Counter script</a>
+                    </li>
+                    <li class="nav-item active mx-5">
+                        <a class="nav-link text-white bg-primary" href="slideshow.html">Ajax Slideshow<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="centrepage m-5 p-5 border shadow-sm" style="min-height: 32rem">
+                <div class="row">
+                    <div class="col-sm">
+                        <form>
+                            <div class="form-group">
+                                <label for="selectpictures">Pick a Gallery:</label>
+                                <select class="form-control" id="selectpictures">
+                                    <option disabled selected value>-- Choose a Gallery --</option>
+                                    <option value="cats">Cats in hats</option>
+                                    <option value="dogs">Dogs in Clogs</option>
+                                    <option value="guineapigs">Guinea Pigs in Wigs</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="gobutton">Go!</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <div id="wackyslideshow" style="visibility: hidden; position: relative; margin: 0 auto;
+        top: 0px; left: 0px; width: 400px; height: 300px; overflow: hidden;">
+                            <!-- Slides Container -->
+                            <div data-u="slides" style="position: absolute; left: 0px; top: 0px; width: 400px; height: 300px; overflow: hidden;">
+                                <div>
+                                    <img data-u="image" src="images/default.png" height="300" width="400" alt="Select a gallery above">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright text-center font-italic small py-3">
+                &copy; Copyright : Erica Bradbury
+            </div>
+        </div><!-- container -->
+        <!-- include the library javascript -->
+        <script src="js/jquery/jquery-3.3.1.min.js"></script>
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+        <script src="js/jssorslider/jssor.slider.min.js"></script>
+        <!-- include our javascript to run -->
+        <script type="text/javascript" src="js/slideshow.js"></script>
+    </body>
+</html>

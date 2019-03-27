@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Javascript Debug Examples</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="js/bootstrap/bootstrap.min.css">
+        <!-- include custom stylesheet -->
+        <link rel="stylesheet" href="css/jsdb-main.css">
+    </head>
+    <body class="pastel-green">
+        <div id="container" class="container"><!-- needed for bootstrap styling -->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item mx-5">
+                        <a class="nav-link text-primary" href="index.html">Home  </a>
+                    </li>
+                    <li class="nav-item active mx-5">
+                        <a class="nav-link text-white bg-primary" href="console-methods.html">Console<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item mx-5">
+                        <a class="nav-link text-primary" href="counter.html">Counter script</a>
+                    </li>
+
+                    <li class="nav-item mx-5">
+                        <a class="nav-link text-primary" href="slideshow.html">Ajax Slideshow</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="centrepage m-5 p-5 border shadow-sm" style="min-height: 32rem">
+
+                <div class="row">
+                    <div class="col-sm">
+                        <h2 class="text-center">Console API Examples</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <button type="button" class="btn-info w-100 " data-toggle="collapse" data-target="#console-messages">
+                            Messages
+                        </button>
+                    </div>
+                    <div class="col-sm">
+                        <button type="button" class="btn-info w-100" data-toggle="collapse" data-target="#console-messages-formatted">
+                            Messages Formatted
+                        </button>
+                    </div>
+                    <div class="col-sm">
+                        <button type="button" class="btn-info w-100" data-toggle="collapse" data-target="#console-table">
+                        Table Display
+                        </button>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-sm">
+                        <button type="button" class="btn-info w-100" data-toggle="collapse" data-target="#console-time">
+                        Timing
+                        </button>
+                    </div>
+                    <div class="col-sm">
+                        <button type="button" class="btn-info w-100" data-toggle="collapse" data-target="#console-filter">
+                        Filter
+                        </button>
+                    </div>
+                    <div class="col-sm">
+                        <button type="button" class="btn-info w-100" data-toggle="collapse" data-target="#console-group">
+                        Grouping
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="console-messages" class="col-sm collapse">
+                            <pre><code>
+var coordinate = { x: 34, y: 75.574, z: 20 }
+
+    console.log(coordinate)
+    console.trace(coordinate)
+    console.warn(coordinate)
+    console.info(coordinate)
+    console.error(coordinate)
+    console.debug(coordinate)
+
+                            </code></pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="console-messages-formatted" class="col-sm collapse">
+                            <pre><code>
+
+    console.log('Logging div object as DOM element %o', document.getElementById('console-table'))
+    console.warn('Warning with div element as JS object %O', document.getElementById('console-table'))
+    console.dir(document.getElementById('console-time')) // another way to display things as JS object
+    console.info('Information call with Y value as integer %d', coordinate.y)
+    console.info('Information call with Y value as float %f', coordinate.y)
+    console.error('Error call with coordinate y as string %s', coordinate.y)
+    console.log('%cStyling the coordinate object output with CSS %O', 'color:RebeccaPurple; font-weight:bold; font-size: large', coordinate)
+                            </code></pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="console-table" class="col-sm collapse">
+                        <pre><code>
+var characters = [
+  { name: 'tom', age: 45, favouriteVegetable: 'leek' },
+  { name: 'dick', age: 52, favouriteVegetable: 'turnip' },
+  { name: 'harry', age: 73, favouriteVegetable: 'marrow' },
+  { name: 'gertrude', age: 66, favouriteVegetable: 'carrot' },
+  { name: 'edna', age: 57, favouriteVegetable: 'purple sprouting broccoli' },
+  { name: 'bernard', age: 98, favouriteVegetable: 'parsnip', favouriteFruit: 'banana' },
+  { name: 'colin', age: 81, favouriteVegetable: 'courgette', favouriteFruits: ['orange', 'apple', 'kiwi'] }
+]
+
+console.table(characters)
+console.table(characters, ['age', 'name'])
+                        </code></pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="console-time" class="col-sm collapse">
+                        <pre><code>
+    let storage = []
+    for (let i = 1; i < 5000; i++) {
+      storage.push(i)
+    }
+    console.timeEnd('Counter1')
+                        </code></pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="console-filter" class="col-sm collapse">
+                        <pre><code>
+    let randomValues = makeMixedArray(30)
+    console.dir(randomValues)
+    randomValues.forEach(function (element) {
+      if (typeof element === 'number') {
+        console.log(element)
+      } else {
+        console.warn(element)
+        console.count('Got a fruit')
+        // deliberately do something that will generate a browser error in console
+        let randomAscii = Math.floor((Math.random() * 25) + 97)
+        let missingAjaxPage = String.fromCharCode(randomAscii) + '.php'
+        $.get(missingAjaxPage)
+      }
+    })
+                        </code></pre>
+                    </div>
+                    <div id="console-group" class="col-sm collapse">
+                        <pre><code>
+  let firstFunction = function (choice) {
+    console.group('First function with choice number %d', choice)
+    let animals = ['kittens', 'aardvarks', 'meerkats', 'puppies']
+    console.log(animals.length)
+    let likeAmounts = ['a bit', 'a lot', 'very very much', 'more than anything else in the world']
+    console.log(likeAmounts)
+    console.groupEnd()
+    return 'I like ' + animals[choice] + ' ' + likeAmounts[choice]
+  }
+
+  let secondFunction = function () {
+    console.group('Second function')
+    for (let i = 1; i < 4; i++) {
+      console.group('Looping on loop %d', i)
+      let number = makeRandomInteger(0, 3)
+      let personalPreference = firstFunction(number)
+      console.log(personalPreference)
+      console.groupEnd()
+    }
+    console.groupEnd()
+  }
+                        </code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright text-center font-italic small py-3">
+                &copy; Copyright : Erica Bradbury
+            </div>
+        </div><!-- container -->
+        <!-- include javascript library code -->
+        <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+        <script src="js/jquery/jquery-3.3.1.min.js"></script>
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+        <!-- include our javascript to run -->
+        <script type="text/javascript" src="js/console-methods.js"></script>
+    </body>
+</html>
+
